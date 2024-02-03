@@ -8,7 +8,7 @@ import { validateBody } from '../../middlewares/validateBody.js';
 
 export const authRouter = express.Router();
 
-authRouter.post('/register', validateBody(registerSchema), ctrl.register)
+authRouter.post('/signup', validateBody(registerSchema), ctrl.register)
 
 authRouter.post('/login', validateBody(loginSchema), ctrl.login)
 
