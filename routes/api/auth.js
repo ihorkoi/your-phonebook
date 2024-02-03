@@ -1,10 +1,12 @@
 import express from 'express';
 import ctrl from "../../controllers/auth.js";
-import { validateBody, authenticate } from '../../middlewares/index.js';
-import { registerSchema, loginSchema } from '../../models/user.js';
+import { authenticate } from '../../middlewares/authenticate.js';
+import { registerSchema, loginSchema } from '../../models/Users.js';
+import { validateBody } from '../../middlewares/validateBody.js';
 
 
-const authRouter = express.Router();
+
+export const authRouter = express.Router();
 
 authRouter.post('/register', validateBody(registerSchema), ctrl.register)
 
@@ -16,4 +18,3 @@ authRouter.post("/logout", authenticate, ctrl.logout)
 
 authRouter.patch("/", authenticate, ctrl.updateById);
 
-export default authRouter;
