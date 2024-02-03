@@ -14,7 +14,7 @@ const addContact = async (req, res, next) => {
     }
 };
 
-const editContact = async (req, res, next) => {
+const updateContact = async (req, res, next) => {
     try {
         const { id } = req.params;
         const { _id: owner } = req.user;
@@ -48,6 +48,6 @@ const deleteContact = async (req, res, next) => {
 
 export default {
     addContact,
-    editContact,
+    updateContact,
     deleteContact
 };
