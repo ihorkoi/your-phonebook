@@ -8,9 +8,11 @@ import { validateBody } from '../../middlewares/validateBody.js';
 
 export const contactsRouter = express.Router();
 
+contactsRouter.use(authenticate)
+
 contactsRouter.get("/", ctrl.getContacts)
 
-contactsRouter.post('/add', validateBody(), ctrl.addContact)
+contactsRouter.post('/', validateBody(), ctrl.addContact)
 
 contactsRouter.put('/:id', validateBody(), ctrl.updateContact)
 

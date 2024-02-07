@@ -10,6 +10,11 @@ const schema = new mongoose.Schema({
         default: '',
         required: [true, "Email is required"],
     },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
+        required: true,
+    },
 }, { versionKey: false, timestamps: true });
 
 export const Contact = mongoose.model('contact', schema);
