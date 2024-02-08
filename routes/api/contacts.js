@@ -1,7 +1,7 @@
 import express from 'express';
 import ctrl from "../../controllers/contacts.js";
 import { authenticate } from '../../middlewares/authenticate.js';
-import { addContactSchema } from '../../models/Contact.js.js';
+import { addContactSchema } from '../../models/Contact.js';
 import { validateBody } from '../../middlewares/validateBody.js';
 
 

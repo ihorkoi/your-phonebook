@@ -6,10 +6,10 @@ const schema = new mongoose.Schema({
         type: String,
         default: ''
     },
-    pnone: {
+    number: {
         type: String,
         default: '',
-        required: [true, "Email is required"],
+        required: true
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,

@@ -1,4 +1,4 @@
-import Contact from "../models/Contact.js";
+import { Contact } from "../models/Contact.js";
 
 import { HttpError } from "../helpers/HttpError.js";
 
@@ -52,6 +52,7 @@ const deleteContact = async (req, res, next) => {
 
         res.json({
             message: "Delete success",
+            id
         })
     } catch (error) {
         next(error)
