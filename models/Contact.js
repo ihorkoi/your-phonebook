@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import Joi from "joi";
 
 const schema = new mongoose.Schema({
     name: {
@@ -16,5 +17,11 @@ const schema = new mongoose.Schema({
         required: true,
     },
 }, { versionKey: false, timestamps: true });
+
+export const addContactSchema = Joi.object({
+    name: Joi.string().required(),
+    number: Joi.string().min(6).max(64).required(),
+})
+
 
 export const Contact = mongoose.model('contact', schema);
